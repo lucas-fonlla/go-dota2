@@ -43,7 +43,8 @@ enum DOTA_GameState {
 	DOTA_GAMERULES_STATE_CUSTOM_GAME_SETUP = 9;
 	DOTA_GAMERULES_STATE_WAIT_FOR_MAP_TO_LOAD = 10;
 	DOTA_GAMERULES_STATE_SCENARIO_SETUP = 11;
-	DOTA_GAMERULES_STATE_LAST = 12;
+	DOTA_GAMERULES_STATE_PLAYER_DRAFT = 12;
+	DOTA_GAMERULES_STATE_LAST = 13;
 }
 
 enum DOTA_GC_TEAM {
@@ -108,6 +109,8 @@ enum EEvent {
 	EVENT_ID_MUERTA_RELEASE_SPRING2023 = 40;
 	EVENT_ID_TEAM_2023_TOUR1 = 41;
 	EVENT_ID_TEAM_2023_TOUR2 = 42;
+	EVENT_ID_TEAM_2023_TOUR3 = 43;
+	EVENT_ID_10TH_ANNIVERSARY = 46;
 }
 
 enum ERankType {
@@ -118,8 +121,10 @@ enum ERankType {
 	k_ERankType_RankedLegacy = 4;
 	k_ERankType_CasualGlicko = 5;
 	k_ERankType_RankedGlicko = 6;
-	k_ERankType_CasualRemapped = 7;
-	k_ERankType_CasualRemappedGlicko = 8;
+	k_ERankType_RankMax = 7;
+	k_ERankType_BehaviorPrivate = 100;
+	k_ERankType_BehaviorPublic = 101;
+	k_ERankType_Max = 102;
 }
 
 enum DOTALeaverStatus_t {
@@ -621,6 +626,7 @@ message CDOTAClientHardwareSpecs {
 	optional bool is_64_bit_os = 4;
 	optional uint64 upload_measurement = 5;
 	optional bool prefer_not_host = 6;
+	repeated uint32 crc = 7;
 }
 
 message CDOTASaveGame {

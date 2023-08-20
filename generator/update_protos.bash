@@ -2,12 +2,16 @@
 set -eo pipefail
 
 REPO_ROOT=$(git rev-parse --show-toplevel)
+echo REPO_ROOT=$REPO_ROOT
 REPO_PROTOS=${REPO_ROOT}/protos
+echo REPO_PROTOS=$REPO_PROTOS
 GAME_DIR="Protobufs"
+echo GAME_DIR=$GAME_DIR
 GAME_PATH="${REPO_ROOT}/generator/${GAME_DIR}"
+echo GAME_PATH=$GAME_PATH
 
 cd ${REPO_ROOT}/generator
-git submodule update --init ${GAME_DIR}
+# git submodule update --init ${GAME_DIR}
 
 WORK_DIR=`mktemp -d`
 echo "Using working directory: ${WORK_DIR}"
@@ -39,7 +43,7 @@ cp \
     ${WORK_DIR}/orig/
 
 mkdir -p ${WORK_DIR}/orig/google/protobuf
-cp -ra ${GAME_PATH}/google/protobuf/. ${WORK_DIR}/orig/google/protobuf/
+cp -a ${GAME_PATH}/google/protobuf/. ${WORK_DIR}/orig/google/protobuf/
 
 cd ${WORK_DIR}
 # Add valve_extensions.proto

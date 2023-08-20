@@ -38,6 +38,8 @@ enum EDOTAGCMsg {
 	k_EMsgGCSubmitPlayerReport = 7078;
 	k_EMsgGCSubmitPlayerReportResponse = 7079;
 	k_EMsgGCPracticeLobbyKick = 7081;
+	k_EMsgGCSubmitPlayerReportV2 = 7082;
+	k_EMsgGCSubmitPlayerReportResponseV2 = 7083;
 	k_EMsgGCRequestSaveGames = 7084;
 	k_EMsgGCRequestSaveGamesServer = 7085;
 	k_EMsgGCRequestSaveGamesResponse = 7086;
@@ -101,6 +103,8 @@ enum EDOTAGCMsg {
 	k_EMsgGCToGCCanInviteUserToTeamResponse = 7235;
 	k_EMsgGCToGCGetUserRank = 7236;
 	k_EMsgGCToGCGetUserRankResponse = 7237;
+	k_EMsgGCToGCAdjustUserRank = 7238;
+	k_EMsgGCToGCAdjustUserRankResponse = 7239;
 	k_EMsgGCToGCUpdateTeamStats = 7240;
 	k_EMsgGCToGCValidateTeam = 7241;
 	k_EMsgGCToGCValidateTeamResponse = 7242;
@@ -156,6 +160,9 @@ enum EDOTAGCMsg {
 	k_EMsgGCToGCUpdateMatchmakingStats = 7415;
 	k_EMsgGCToServerPingRequest = 7416;
 	k_EMsgGCToServerPingResponse = 7417;
+	k_EMsgGCToServerEvaluateToxicChat = 7418;
+	k_EMsgServerToGCEvaluateToxicChat = 7419;
+	k_EMsgServerToGCEvaluateToxicChatResponse = 7420;
 	k_EMsgGCToGCProcessMatchLeaver = 7426;
 	k_EMsgGCNotificationsRequest = 7427;
 	k_EMsgGCNotificationsResponse = 7428;
@@ -812,11 +819,14 @@ enum EDOTAGCMsg {
 	k_EMsgGCToClientCollectorsCacheAvailableDataResponse = 8872;
 	k_EMsgClientToGCUploadMatchClip = 8873;
 	k_EMsgGCToClientUploadMatchClipResponse = 8874;
-	k_EMsgGCToServerSetSteamLearnDisable = 8875;
 	k_EMsgGCToServerSetSteamLearnKeysChanged = 8876;
 	k_EMsgSignOutMuertaMinigame = 8877;
 	k_EMsgGCToServerLobbyHeroRoleStats = 8878;
 	k_EMsgClientToGCRankRequest = 8879;
 	k_EMsgGCToClientRankResponse = 8880;
 	k_EMsgGCToClientRankUpdate = 8881;
+	k_EMsgSignOutMapStats = 8882;
+	k_EMsgClientToGCMapStatsRequest = 8883;
+	k_EMsgGCToClientMapStatsResponse = 8884;
+	k_EMsgGCToServerSetSteamLearnInferencing = 8885;
 }
